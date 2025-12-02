@@ -5,123 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Форма реєстрації</title>
     <style>
+        :root {
+            --accent: #00a8ff;
+            --accent-dark: #0076b5;
+            --bg: #0d1321;
+            --card-bg: #ffffff;
+            --text: #1f2a44;
+        }
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle at top, #1f3c73, #0d1321 65%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+            color: var(--text);
         }
-        h1 {
-            color: #333;
-            text-align: center;
+        .form-wrapper {
+            width: min(460px, 100%);
+            position: relative;
         }
-        form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .form-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: -15px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(0,168,255,0.4), rgba(255,255,255,0.1));
+            filter: blur(25px);
+            z-index: 0;
         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="date"],
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        .form-card {
+            position: relative;
+            z-index: 1;
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 35px 30px 30px;
+            box-shadow: 0 25px 45px rgba(6, 15, 51, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .back-link {
-            display: block;
-            margin-bottom: 20px;
-            color: #0066cc;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 15px;
+            color: var(--accent);
             text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
         }
         .back-link:hover {
-            text-decoration: underline;
+            color: var(--accent-dark);
+        }
+        h1 {
+            margin: 0 0 8px;
+            text-align: center;
+            font-size: 26px;
+            color: var(--text);
+        }
+        .subtitle {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #5c688a;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4b5776;
+        }
+        input,
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cfd7f2;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: 0.2s ease;
+            background: #f8f9ff;
+        }
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.15);
+            background: #ffffff;
+        }
+        .form-actions {
+            margin-top: 25px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 15px 25px rgba(0, 118, 181, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 28px rgba(0, 118, 181, 0.45);
+        }
+        .note {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7595;
+            margin-top: 18px;
+        }
+        .footer-info {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #93a1d3;
+        }
+        .footer-info strong {
+            color: var(--accent-dark);
+        }
+        @media (max-width: 480px) {
+            .form-card {
+                padding: 25px 20px 25px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← Назад до списку лабораторних робіт</a>
-    
-    <h1>Форма реєстрації</h1>
-    
-    <form action="https://webhook.site/your-unique-url" method="post">
-        <div class="form-group">
-            <label for="first_name">Ім'я користувача:</label>
-            <input type="text" id="first_name" name="first_name" required>
+    <div class="form-wrapper">
+        <div class="form-card">
+            <a href="index.html" class="back-link">← Повернутися на головну</a>
+            <h1>Форма реєстрації</h1>
+            <p class="subtitle">Практичне заняття №2 «Основи CSS»</p>
+
+            <form action="https://webhook.site/your-unique-url" method="post">
+                <div class="form-group">
+                    <label for="first_name">Ім'я користувача</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Введіть ім'я" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="last_name">Прізвище користувача</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Введіть прізвище" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Електронна пошта</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" placeholder="********" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm_password">Підтвердження паролю</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="********" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Дата народження</label>
+                    <input type="date" id="birthdate" name="birthdate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Стать</label>
+                    <select id="gender" name="gender">
+                        <option value="">Оберіть варіант</option>
+                        <option value="male">Чоловіча</option>
+                        <option value="female">Жіноча</option>
+                        <option value="other">Інша</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Зареєструватися</button>
+                </div>
+            </form>
+
+            <p class="note">
+                Замініть <code>your-unique-url</code> в атрибуті <strong>action</strong> на власне посилання з
+                <a href="https://webhook.site/" target="_blank">webhook.site</a>.
+            </p>
+
+            <p class="footer-info">
+                Виконав: Холоднов Тимофій, група <strong>КІД-41</strong> | Email: xawyse@gmail.com | GitHub: <a href="https://github.com/xawyse" target="_blank">github.com/xawyse</a>
+            </p>
         </div>
-        
-        <div class="form-group">
-            <label for="last_name">Прізвище користувача:</label>
-            <input type="text" id="last_name" name="last_name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Адреса електронної пошти:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="confirm_password">Підтвердження паролю:</label>
-            <input type="password" id="confirm_password" name="confirm_password" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="birthdate">Дата народження:</label>
-            <input type="date" id="birthdate" name="birthdate">
-        </div>
-        
-        <div class="form-group">
-            <label for="gender">Стать:</label>
-            <select id="gender" name="gender">
-                <option value="">Оберіть стать</option>
-                <option value="male">Чоловіча</option>
-                <option value="female">Жіноча</option>
-                <option value="other">Інша</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <input type="submit" value="Зареєструватися">
-        </div>
-    </form>
-    
-    <p style="text-align: center; color: #666; font-size: 14px; margin-top: 20px;">
-        <strong>Примітка:</strong> Замініть "your-unique-url" в атрибуті action на унікальний URL з 
-        <a href="https://webhook.site/" target="_blank">webhook.site</a>
-    </p>
+    </div>
 </body>
 </html>
 
