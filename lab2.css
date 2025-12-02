@@ -1,81 +1,84 @@
-/* 1. Перший <li> — робимо жирним */
+/* Лабораторна робота №2. CSS селектори */
+
+/* 1. Перший <li> – жирний шрифт */
 li:first-child {
     font-weight: bold;
 }
 
-/* 2. Останні <a> в кожному батьківському елементі — червоні */
+/* 2. Останні дочірні <a> – червоні */
 a:last-child {
     color: red;
 }
 
-/* 3. Вимкнені інпути — сірий фон */
+/* 3. Усі вимкнені (disabled) input – сірий фон */
 input:disabled {
-    background-color: #dcdcdc;
+    background-color: #d3d3d3;
 }
 
-/* 4. <p> як прямі діти <div> — напівжирні */
+/* 4. Прямі дочірні <p> усередині <div> – напівжирні */
 div > p {
     font-weight: 600;
 }
 
-/* 5. Елементи з href, що починається з https — зелені */
+/* 5. Елементи з href, що починається з https – зелені */
 [href^="https"] {
-    color: #148d14;
+    color: green;
 }
 
-/* 6. input[type="text"] — синя рамка */
+/* 6. Усі input[type="text"] з синьою рамкою */
 input[type="text"] {
-    border: 1px solid #2563eb;
+    border: 1px solid blue;
 }
 
-/* 7. <li>, які перші або останні у списку — великий шрифт */
+/* 7. Перші та останні <li> з розміром шрифту 24px */
 li:first-child,
 li:last-child {
     font-size: 24px;
 }
 
-/* 8. <p> нащадки <div> — шрифт 16px */
+/* 8. Усі <p>, які є нащадками <div>, шрифт 16px */
 div p {
     font-size: 16px;
 }
 
-/* 9. Всі checked inputs — світло-блакитний фон */
+/* 9. Усі відмічені (checked) input – світло-блакитний фон */
 input:checked {
-    background-color: #cfe8ff;
+    background-color: #cceeff;
 }
 
-/* 10. Прямі <a> в <li> — підкреслені */
+/* 10. Усі <a>, які є прямими дітьми <li>, з підкресленням */
 li > a {
     text-decoration: underline;
 }
 
-/* 11. Парні <li> — жирні */
+/* 11. Усі парні <li> – жирні */
 li:nth-child(even) {
     font-weight: bold;
 }
 
-/* 12. input[type="text"]:not(:disabled) — сірий фон */
+/* 12. Усі input[type="text"], які не disabled, із сірим фоном */
 input[type="text"]:not(:disabled) {
     background-color: #f0f0f0;
 }
 
-/* 13. <p>, які є першими дітьми батька — 24px */
+/* 13. Усі <p>, які є першими дітьми свого батька, з розміром шрифту 24px */
 p:first-child {
     font-size: 24px;
 }
 
-/* 14. <li> після .special — перечеркнутий */
+/* 14. <li>, що йде одразу після елемента з класом .special – перекреслений */
 .special + li {
     text-decoration: line-through;
 }
 
-/* 15. Перша літера кожного <p> — велика */
+/* 15. Перша літера кожного <p> з великим розміром */
 p::first-letter {
     font-size: 36px;
 }
 
-/* 16. Додаємо стрілку ↗ після кожного <a> */
+/* 16. Додаємо ↗ після кожного посилання */
 a::after {
     content: " ↗";
 }
+
 
