@@ -20,6 +20,7 @@ header {
 nav {
     background: #e0e0e0;
     padding: 10px 0;
+    position: relative;
 }
 
 nav ul {
@@ -28,6 +29,7 @@ nav ul {
     padding: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -99,7 +101,10 @@ th {
 
 /* Пункт меню ROFL справа */
 .nav-rofl {
-    margin-left: auto;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .nav-rofl a {
