@@ -27,7 +27,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -97,24 +97,19 @@ th {
     background: #e8f4f8;
 }
 
-/* Кнопка "рофла" на головній сторінці */
-.rofl-button {
-    position: fixed;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 8px 10px;
+/* Пункт меню ROFL справа */
+.nav-rofl {
+    margin-left: auto;
+}
+
+.nav-rofl a {
+    padding: 4px 10px;
     border-radius: 999px;
     background: #ff4081;
     color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 200;
 }
 
-.rofl-button:hover {
+.nav-rofl a:hover {
     background: #e91e63;
 }
 
