@@ -36,6 +36,22 @@
     padding: 16px;
 }
 
+.keyboards-container {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.keyboards-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .keyboard-display {
     max-width: 960px;
     width: 100%;
@@ -69,15 +85,6 @@
     text-align: right;
 }
 
-.keyboards-container {
-    display: flex;
-    gap: 16px;
-    max-width: 1400px;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .keyboard {
     background: #020617;
     border-radius: 16px;
@@ -85,13 +92,19 @@
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.7);
     display: grid;
     gap: 6px;
-    flex: 1 1 auto;
-    min-width: 0;
 }
 
-.keyboard--right {
-    flex: 0 0 auto;
-    width: auto;
+.keyboard--main {
+    max-width: 960px;
+    width: 100%;
+}
+
+.keyboard--arrows {
+    width: 280px;
+}
+
+.keyboard--numpad {
+    width: 280px;
 }
 
 .keyboard__row {
@@ -144,39 +157,44 @@
 }
 
 .key--arrow {
-    font-size: 16px;
-    padding: 12px 8px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
 }
 
-.key--tall {
-    grid-row: span 2;
-}
-
-.key--wide-numpad {
-    grid-column: span 2;
+.key--arrow-up {
+    margin: 0 auto;
 }
 
 .keyboard__row--arrows {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.keyboard__row--arrow-up {
-    display: flex;
     justify-content: center;
+    gap: 6px;
 }
 
-.keyboard__row--arrow-bottom {
-    display: grid;
+.keyboard--arrows .keyboard__row {
     grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
 }
 
-.keyboard__numpad {
-    display: grid;
-    gap: 6px;
-    margin-top: 6px;
+.keyboard--numpad .keyboard__row {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.keyboard--numpad .keyboard__row:last-child {
+    grid-template-columns: 2fr 1fr;
+}
+
+.key--numpad {
+    min-width: 60px;
+    font-size: 13px;
+}
+
+.key--numpad-tall {
+    grid-row: span 2;
+}
+
+.key--numpad-wide {
+    grid-column: span 2;
 }
 
 .key:hover {
@@ -201,18 +219,6 @@
     padding: 12px 16px 20px;
     font-size: 12px;
     color: #9ca3af;
-}
-
-@media (max-width: 1200px) {
-    .keyboards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .keyboard--right {
-        width: 100%;
-        max-width: 400px;
-    }
 }
 
 @media (max-width: 768px) {

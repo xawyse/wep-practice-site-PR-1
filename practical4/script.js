@@ -41,21 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
         label === "Delete" ||
         label === "End" ||
         label === "Page Down" ||
+        label === "↑" ||
+        label === "←" ||
+        label === "↓" ||
+        label === "→" ||
         label === "Num Lock"
       ) {
         // службові клавіші — нічого не робимо
-        return;
-      } else if (label === "↑") {
-        // Стрілка вгору
-        return;
-      } else if (label === "←") {
-        // Стрілка вліво
-        return;
-      } else if (label === "↓") {
-        // Стрілка вниз
-        return;
-      } else if (label === "→") {
-        // Стрілка вправо
         return;
       } else {
         // усі інші символи просто додаємо до рядка
