@@ -183,7 +183,7 @@
 }
 
 .keyboard--numpad .keyboard__row:last-child {
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
 }
 
 .key--numpad {
