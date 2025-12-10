@@ -125,8 +125,7 @@
 .keyboard--nav {
     width: 280px;
     padding-top: 8px;  /* Отступ сверху для выравнивания с основной клавиатурой */
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 6px;
 }
 
@@ -208,12 +207,14 @@
     gap: 6px;
 }
 
-.keyboard--nav .keyboard__row:first-child {
+.keyboard--nav .keyboard__row.keyboard__row--nav-top {
     grid-template-columns: repeat(3, 1fr);
+    display: grid;
 }
 
-.keyboard--nav .keyboard__row:not(:first-child):not(.keyboard__row--arrows) {
+.keyboard--nav .keyboard__row:not(.keyboard__row--arrows):not(.keyboard__row--nav-top) {
     grid-template-columns: repeat(3, 1fr);
+    display: grid;
 }
 
 .keyboard--numpad .keyboard__row {
