@@ -34,9 +34,28 @@ document.addEventListener("DOMContentLoaded", () => {
         label === "Alt" ||
         label === "Caps" ||
         label === "Tab" ||
-        label === "Esc"
+        label === "Esc" ||
+        label === "Insert" ||
+        label === "Home" ||
+        label === "Page Up" ||
+        label === "Delete" ||
+        label === "End" ||
+        label === "Page Down" ||
+        label === "Num Lock"
       ) {
         // службові клавіші — нічого не робимо
+        return;
+      } else if (label === "↑") {
+        // Стрілка вгору
+        return;
+      } else if (label === "←") {
+        // Стрілка вліво
+        return;
+      } else if (label === "↓") {
+        // Стрілка вниз
+        return;
+      } else if (label === "→") {
+        // Стрілка вправо
         return;
       } else {
         // усі інші символи просто додаємо до рядка
@@ -47,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
 
 
