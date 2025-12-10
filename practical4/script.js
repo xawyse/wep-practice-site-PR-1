@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
         label === "Caps" ||
         label === "Tab" ||
         label === "Esc" ||
+        label === "Win" ||
+        label === "Menu" ||
+        label === "PrtSc" ||
+        label === "Scroll" ||
+        label === "Pause" ||
         label === "Insert" ||
         label === "Home" ||
         label === "Page Up" ||

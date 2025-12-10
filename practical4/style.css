@@ -38,18 +38,12 @@
 
 .keyboards-container {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1400px;
+    max-width: 1600px;
     width: 100%;
-}
-
-.keyboards-side {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 }
 
 .keyboard-display {
@@ -99,7 +93,7 @@
     width: 100%;
 }
 
-.keyboard--arrows {
+.keyboard--nav {
     width: 280px;
 }
 
@@ -172,7 +166,11 @@
     gap: 6px;
 }
 
-.keyboard--arrows .keyboard__row {
+.keyboard--nav .keyboard__row:first-child {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.keyboard--nav .keyboard__row:not(:first-child):not(.keyboard__row--arrows) {
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -180,8 +178,12 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.keyboard--numpad .keyboard__row:nth-child(3) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .keyboard--numpad .keyboard__row:last-child {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
 }
 
 .key--numpad {
