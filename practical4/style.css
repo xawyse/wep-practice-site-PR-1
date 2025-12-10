@@ -37,13 +37,42 @@
 }
 
 .keyboards-container {
+    max-width: 1600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Верхний ряд: Esc, F1-F12, PrtSc, Scroll, Pause */
+.keyboard-top-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 8px;
+}
+
+.keyboard-top-row__spacer {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Основной ряд: основная клавиатура + навигация + нумпад */
+.keyboards-main-row {
     display: flex;
     gap: 12px;
     align-items: flex-start;
     justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1600px;
     width: 100%;
+}
+
+.keyboard-right-section {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
 }
 
 .keyboard-display {
@@ -89,12 +118,17 @@
 }
 
 .keyboard--main {
-    max-width: 960px;
-    width: 100%;
+    width: 960px;
+    margin-top: 0;
 }
 
 .keyboard--nav {
     width: 280px;
+    padding-top: 8px;  /* Отступ сверху для выравнивания с основной клавиатурой */
+}
+
+.keyboard__row--nav-top {
+    margin-top: 0;
 }
 
 .keyboard--numpad {
@@ -110,6 +144,7 @@
 
 .keyboard__row--top {
     justify-content: start;
+    margin-top: 0;
 }
 
 .keyboard__row--bottom {

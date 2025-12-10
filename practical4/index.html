@@ -28,23 +28,29 @@
         </section>
 
         <div class="keyboards-container">
-            <section class="keyboard keyboard--main">
-                <!-- Row 1 -->
-                <div class="keyboard__row keyboard__row--top">
-                    <button class="key key--small">Esc</button>
-                    <button class="key key--small">F1</button>
-                    <button class="key key--small">F2</button>
-                    <button class="key key--small">F3</button>
-                    <button class="key key--small">F4</button>
-                    <button class="key key--small">F5</button>
-                    <button class="key key--small">F6</button>
-                    <button class="key key--small">F7</button>
-                    <button class="key key--small">F8</button>
-                    <button class="key key--small">F9</button>
-                    <button class="key key--small">F10</button>
-                    <button class="key key--small">F11</button>
-                    <button class="key key--small">F12</button>
-                </div>
+            <!-- Верхний ряд: Esc, F1-F12, PrtSc, Scroll, Pause -->
+            <div class="keyboard-top-row">
+                <button class="key key--small">Esc</button>
+                <button class="key key--small">F1</button>
+                <button class="key key--small">F2</button>
+                <button class="key key--small">F3</button>
+                <button class="key key--small">F4</button>
+                <button class="key key--small">F5</button>
+                <button class="key key--small">F6</button>
+                <button class="key key--small">F7</button>
+                <button class="key key--small">F8</button>
+                <button class="key key--small">F9</button>
+                <button class="key key--small">F10</button>
+                <button class="key key--small">F11</button>
+                <button class="key key--small">F12</button>
+                <div class="keyboard-top-row__spacer"></div>
+                <button class="key key--small">PrtSc</button>
+                <button class="key key--small">Scroll</button>
+                <button class="key key--small">Pause</button>
+            </div>
+
+            <div class="keyboards-main-row">
+                <section class="keyboard keyboard--main">
 
                 <!-- Row 2 -->
                 <div class="keyboard__row">
@@ -126,65 +132,63 @@
                     <button class="key key--medium">Menu</button>
                     <button class="key key--medium">Ctrl</button>
                 </div>
-            </section>
-
-            <!-- Navigation Cluster (между основной клавиатурой и нумпадом) -->
-            <section class="keyboard keyboard--nav">
-                <div class="keyboard__row">
-                    <button class="key key--small">PrtSc</button>
-                    <button class="key key--small">Scroll</button>
-                    <button class="key key--small">Pause</button>
-                </div>
-                <div class="keyboard__row">
-                    <button class="key key--medium">Insert</button>
-                    <button class="key key--medium">Home</button>
-                    <button class="key key--medium">Page Up</button>
-                </div>
-                <div class="keyboard__row">
-                    <button class="key key--medium">Delete</button>
-                    <button class="key key--medium">End</button>
-                    <button class="key key--medium">Page Down</button>
-                </div>
-                <div class="keyboard__row keyboard__row--arrows">
-                    <button class="key key--arrow key--arrow-up">↑</button>
-                </div>
-                <div class="keyboard__row keyboard__row--arrows">
-                    <button class="key key--arrow">←</button>
-                    <button class="key key--arrow">↓</button>
-                    <button class="key key--arrow">→</button>
-                </div>
-            </section>
-
-                <!-- Нумпад -->
-                <section class="keyboard keyboard--numpad">
-                    <div class="keyboard__row">
-                        <button class="key key--numpad">Num Lock</button>
-                        <button class="key key--numpad">/</button>
-                        <button class="key key--numpad">*</button>
-                        <button class="key key--numpad">-</button>
-                    </div>
-                    <div class="keyboard__row">
-                        <button class="key key--numpad">7</button>
-                        <button class="key key--numpad">8</button>
-                        <button class="key key--numpad">9</button>
-                        <button class="key key--numpad key--numpad-tall">+</button>
-                    </div>
-                    <div class="keyboard__row">
-                        <button class="key key--numpad">4</button>
-                        <button class="key key--numpad">5</button>
-                        <button class="key key--numpad">6</button>
-                    </div>
-                    <div class="keyboard__row">
-                        <button class="key key--numpad">1</button>
-                        <button class="key key--numpad">2</button>
-                        <button class="key key--numpad">3</button>
-                        <button class="key key--numpad key--numpad-tall">Enter</button>
-                    </div>
-                    <div class="keyboard__row">
-                        <button class="key key--numpad key--numpad-wide">0</button>
-                        <button class="key key--numpad">.</button>
-                    </div>
                 </section>
+
+                <!-- Navigation Cluster (справа от основной клавиатуры) -->
+                <div class="keyboard-right-section">
+                    <section class="keyboard keyboard--nav">
+                        <div class="keyboard__row keyboard__row--nav-top">
+                            <button class="key key--medium">Insert</button>
+                            <button class="key key--medium">Home</button>
+                            <button class="key key--medium">Page Up</button>
+                        </div>
+                        <div class="keyboard__row">
+                            <button class="key key--medium">Delete</button>
+                            <button class="key key--medium">End</button>
+                            <button class="key key--medium">Page Down</button>
+                        </div>
+                        <div class="keyboard__row keyboard__row--arrows">
+                            <button class="key key--arrow key--arrow-up">↑</button>
+                        </div>
+                        <div class="keyboard__row keyboard__row--arrows">
+                            <button class="key key--arrow">←</button>
+                            <button class="key key--arrow">↓</button>
+                            <button class="key key--arrow">→</button>
+                        </div>
+                    </section>
+
+                    <!-- Нумпад (справа от навигации) -->
+                    <section class="keyboard keyboard--numpad">
+                        <div class="keyboard__row">
+                            <button class="key key--numpad">Num Lock</button>
+                            <button class="key key--numpad">/</button>
+                            <button class="key key--numpad">*</button>
+                            <button class="key key--numpad">-</button>
+                        </div>
+                        <div class="keyboard__row">
+                            <button class="key key--numpad">7</button>
+                            <button class="key key--numpad">8</button>
+                            <button class="key key--numpad">9</button>
+                            <button class="key key--numpad key--numpad-tall">+</button>
+                        </div>
+                        <div class="keyboard__row">
+                            <button class="key key--numpad">4</button>
+                            <button class="key key--numpad">5</button>
+                            <button class="key key--numpad">6</button>
+                        </div>
+                        <div class="keyboard__row">
+                            <button class="key key--numpad">1</button>
+                            <button class="key key--numpad">2</button>
+                            <button class="key key--numpad">3</button>
+                            <button class="key key--numpad key--numpad-tall">Enter</button>
+                        </div>
+                        <div class="keyboard__row">
+                            <button class="key key--numpad key--numpad-wide">0</button>
+                            <button class="key key--numpad">.</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
     </main>
 
