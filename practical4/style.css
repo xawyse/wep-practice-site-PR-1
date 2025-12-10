@@ -119,16 +119,23 @@
 
 .keyboard--main {
     width: 960px;
-    margin-top: 0;
+    margin-top: 8px;  /* Отступ сверху, чтобы F-клавиши были выше */
 }
 
 .keyboard--nav {
     width: 280px;
     padding-top: 8px;  /* Отступ сверху для выравнивания с основной клавиатурой */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .keyboard__row--nav-top {
-    margin-top: 0;
+    margin-top: 8px;  /* Отступ над Insert/Home/PgUp */
+}
+
+.keyboard__row--arrows {
+    margin-top: 8px;  /* Отступ над стрелками */
 }
 
 .keyboard--numpad {
