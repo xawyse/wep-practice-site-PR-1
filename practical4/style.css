@@ -1,113 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
-.page {
-    min-height: 100vh;
-    margin: 0;
-    font-family: "Fira Code", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top, #1e293b, #020617);
-    color: #e5e7eb;
-    display: flex;
-    flex-direction: column;
-}
-
-.header {
-    text-align: center;
-    padding: 16px;
-}
-
-.header__title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.header__subtitle {
-    font-size: 14px;
-    color: #9ca3af;
-}
-
-.page__main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px;
-}
-
-.keyboards-container {
-    max-width: 1600px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-}
-
-/* Верхний ряд: Esc, F1-F12, PrtSc, Scroll, Pause */
-.keyboard-top-row {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    width: 100%;
-    max-width: 1400px;
-    margin-bottom: 8px;
-}
-
-.keyboard-top-row__spacer {
-    flex: 1;
-    min-width: 200px;
-}
-
-/* Основной ряд: основная клавиатура + навигация + нумпад */
-.keyboards-main-row {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-}
-
-.keyboard-right-section {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-}
-
-.keyboard-display {
-    max-width: 960px;
-    width: 100%;
-    background: #020617;
-    border-radius: 12px;
-    padding: 10px 14px;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.6);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.keyboard-display__field {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 12px;
-}
-
-.keyboard-display__input {
-    padding: 6px 8px;
-    border-radius: 8px;
-    border: 1px solid #111827;
-    background: #020617;
-    color: #e5e7eb;
-    font-family: inherit;
-    font-size: 13px;
-}
-
-.keyboard-display__input--result {
-    text-align: right;
-}
-
 .keyboard {
     background: #020617;
     border-radius: 16px;
@@ -115,30 +7,8 @@
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.7);
     display: grid;
     gap: 6px;
-}
-
-.keyboard--main {
-    width: 960px;
-    margin-top: 8px;  /* Отступ сверху, чтобы F-клавиши были выше */
-}
-
-.keyboard--nav {
-    width: 280px;
-    padding-top: 8px;  /* Отступ сверху для выравнивания с основной клавиатурой */
-    display: grid;
-    gap: 6px;
-}
-
-.keyboard__row--nav-top {
-    margin-top: 8px;  /* Отступ над Insert/Home/PgUp */
-}
-
-.keyboard__row--arrows {
-    margin-top: 8px;  /* Отступ над стрелками */
-}
-
-.keyboard--numpad {
-    width: 280px;
+    max-width: 960px;
+    width: 100%;
 }
 
 .keyboard__row {
@@ -146,15 +16,6 @@
     grid-auto-flow: column;
     grid-auto-columns: minmax(32px, 1fr);
     gap: 6px;
-}
-
-.keyboard__row--top {
-    justify-content: start;
-    margin-top: 0;
-}
-
-.keyboard__row--bottom {
-    justify-content: center;
 }
 
 .key {
@@ -175,111 +36,22 @@
         color 0.15s ease;
 }
 
-.key--small {
-    font-size: 11px;
-}
-
-.key--medium {
-    grid-column: span 2;
-}
-
-.key--wide {
-    grid-column: span 3;
-}
-
-.key--space {
-    grid-column: span 6;
-}
-
-.key--arrow {
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
-}
-
-.key--arrow-up {
-    margin: 0 auto;
-}
-
-.keyboard__row--arrows {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-}
-
-.keyboard--nav .keyboard__row.keyboard__row--nav-top {
-    grid-template-columns: repeat(3, 1fr);
+.keyboard-display {
+    max-width: 960px;
+    width: 100%;
+    background: #020617;
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.6);
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.keyboard--nav .keyboard__row:not(.keyboard__row--arrows):not(.keyboard__row--nav-top) {
-    grid-template-columns: repeat(3, 1fr);
-    display: grid;
+.keyboard-display__input--result {
+    text-align: right;
 }
 
-.keyboard--numpad .keyboard__row {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.keyboard--numpad .keyboard__row:nth-child(3) {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.keyboard--numpad .keyboard__row:last-child {
-    grid-template-columns: 2fr 1fr;
-}
-
-.key--numpad {
-    min-width: 60px;
-    font-size: 13px;
-}
-
-.key--numpad-tall {
-    grid-row: span 2;
-}
-
-.key--numpad-wide {
-    grid-column: span 2;
-}
-
-.key:hover {
-    background: linear-gradient(145deg, #1f2937, #020617);
-}
-
-.key:active {
-    transform: translateY(1px);
-    box-shadow:
-        0 1px 0 #020617,
-        0 2px 6px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(145deg, #0f172a, #020617);
-}
-
-.key:focus-visible {
-    outline: 2px solid #38bdf8;
-    outline-offset: 1px;
-}
-
-.footer {
-    text-align: center;
-    padding: 12px 16px 20px;
-    font-size: 12px;
-    color: #9ca3af;
-}
-
-@media (max-width: 768px) {
-    .keyboard {
-        transform: scale(0.9);
-    }
-
-    .keyboard-display {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .keyboard {
-        transform: scale(0.8);
-    }
-}
-
-
+.key:hover { background: linear-gradient(145deg, #1f2937, #020617); }
+.key:active { transform: translateY(1px); box-shadow: 0 1px 0 #020617, 0 2px 6px rgba(0,0,0,0.5); }
+.key:focus-visible { outline: 2px solid #38bdf8; outline-offset: 1px; }
